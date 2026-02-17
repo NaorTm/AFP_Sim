@@ -29,9 +29,9 @@ const PADDING = {
   bottom: 38
 };
 
-function ensureCapacity(buffer: Float32Array, targetLength: number): Float32Array {
+function ensureCapacity(buffer: Float32Array, targetLength: number): Float32Array<ArrayBuffer> {
   if (buffer.length >= targetLength) {
-    return buffer;
+    return buffer as Float32Array<ArrayBuffer>;
   }
   return new Float32Array(targetLength);
 }
