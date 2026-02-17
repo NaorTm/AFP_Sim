@@ -59,6 +59,24 @@ with synchronized, real-time views so parameter changes are immediately visible.
 4. Preview production build:
    - `npm run preview`
 
+## GitHub Actions CI/CD
+
+This project includes a GitHub Actions workflow that automatically:
+- Runs type checking
+- Builds the project
+- Uploads build artifacts
+- Deploys to GitHub Pages (on push to main branch)
+
+The workflow is defined in `.github/workflows/build-and-deploy.yml` and runs on:
+- Push to `main` branch
+- Pull requests to `main` branch
+- Manual trigger via workflow_dispatch
+
+To enable GitHub Pages deployment:
+1. Go to your repository Settings > Pages
+2. Under "Build and deployment", select "GitHub Actions" as the source
+3. The site will be available at `https://<username>.github.io/AFP_Sim/`
+
 ## Notes
 
 - This project is fully client-side (no backend).
